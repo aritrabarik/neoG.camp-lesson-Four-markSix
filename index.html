@@ -5,9 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>minions speak app</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      textarea {
+        display: block;
+        width: 80%;
+        height: 20vh;
+        margin: 1.5rem 1rem;
+        padding: 1rem;
+      }
+
+      h1,
+      button {
+        font-family: sans-serif;
+        margin-left: 1rem;
+      }
+    </style>
   </head>
   <body>
-    <h1>JavaScript in Browser!</h1>
+    <h1>minion talk!</h1>
+    <textarea
+      placeholder="Type the sentence you want in minion language!"
+      id="input-txt"
+    ></textarea>
     <button id="btn-translate">Translate</button>
     <script src="app.js"></script>
   </body>
