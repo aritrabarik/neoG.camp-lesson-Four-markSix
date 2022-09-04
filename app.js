@@ -17,7 +17,10 @@ btnTranslate.addEventListener("click", function onClick() {
 
   fetch(getTranslationURL(inputText))
     .then((response) => response.json())
-    .then((json) => console.log(json.contents.translated))
+    .then((json) => {
+      var translatedText = json.contents.translated;
+      outputTxt.innerHTML = translatedText;
+    })
     .catch(errorHandler);
 });
 
@@ -30,7 +33,7 @@ var outputTxt = document.querySelector("#output-txt");
 // outputTxt.innerText = "iGN1T0R";
 
 //ex09:
-var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+// var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 
 function getTranslationURL(text) {
   return serverURL + "?" + "text=" + text;
@@ -41,3 +44,6 @@ function errorHandler(error) {
   console.log("error occured: ", error);
   alert("something wrong with server! try again after sometime");
 }
+
+//ex11:
+var serverURL = "https://api.funtranslations.com/translate/minion.json";
